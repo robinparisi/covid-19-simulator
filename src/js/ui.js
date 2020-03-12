@@ -72,7 +72,7 @@ class UI {
     this.ui.labelTransmissionRisk.innerHTML = this.model.transmissionRisk * 100
     this.ui.labelDuration.innerHTML = this.model.duration
     this.ui.labelDeathRate.innerHTML = this.model.deathRate * 100
-    this.ui.labelR0.innerHTML = this.model.r0
+    this.ui.labelR0.innerHTML = (this.model.r0).toFixed(2)
   }
 
   refreshDeaths (deaths) {
