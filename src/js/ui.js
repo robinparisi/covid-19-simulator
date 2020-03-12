@@ -5,7 +5,15 @@ class UI {
     this.ui = {
       totalDeath: document.querySelector('#totalDeaths'),
       contactPerDay: document.querySelector('#contactPerDay'),
-      probability: document.querySelector('#probability')
+      probability: document.querySelector('#probability'),
+      contactPerDayLabel: document.querySelector('[data-js-contactPerDayLabel]'),
+      probabilityLabel: document.querySelector('[data-js-probabilityLabel]'),
+      labelPopulation: document.querySelector('[data-label-population]'),
+      labelDailyContactsRate: document.querySelector('[data-label-dailyContactsRate]'),
+      labelTransmissionRisk: document.querySelector('[data-label-transmissionRisk]'),
+      labelDuration: document.querySelector('[data-label-duration]'),
+      labelDeathRate: document.querySelector('[data-label-deathRate]'),
+      labelR0: document.querySelector('[data-label-r0]')
     }
 
     this.contactPerDay = 50
@@ -15,6 +23,7 @@ class UI {
   init () {
     this.bindEvents()
     this.runSimulation()
+    this.refreshLabels()
     return this
   }
 
@@ -25,6 +34,14 @@ class UI {
 
     this.ui.probability.addEventListener('change', (e) => {
       this.onTransmissionRiskChange(this.ui.probability.value)
+    })
+
+    this.ui.contactPerDay.addEventListener('input', (e) => {
+      this.refreshLabels()
+    })
+
+    this.ui.probability.addEventListener('input', (e) => {
+      this.refreshLabels()
     })
   }
 
@@ -39,12 +56,22 @@ class UI {
   }
 
   runSimulation () {
-    console.log(this.transmissionRisk)
     this.model.setParams(this.contactPerDay, this.transmissionRisk)
     this.model.runSimulation()
     const values = this.model.getValues()
     this.refreshDeaths(values[values.length - 1].deaths)
     this.refreshGraph(values)
+  }
+
+  refreshLabels () {
+    this.ui.contactPerDayLabel.innerHTML = this.ui.contactPerDay.value
+    this.ui.probabilityLabel.innerHTML = this.ui.probability.value
+    this.ui.labelPopulation.innerHTML = this.formatNumber(this.model.population)
+    this.ui.labelDailyContactsRate.innerHTML = this.model.dailyContactsRate
+    this.ui.labelTransmissionRisk.innerHTML = this.model.transmissionRisk * 100
+    this.ui.labelDuration.innerHTML = this.model.duration
+    this.ui.labelDeathRate.innerHTML = this.model.deathRate * 100
+    this.ui.labelR0.innerHTML = this.model.r0
   }
 
   refreshDeaths (deaths) {

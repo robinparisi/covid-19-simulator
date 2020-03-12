@@ -11,21 +11,50 @@
     <div class="wrapper">
         <div class="configurator">
             <h1>Simulateur COVID-19</h1>
-            <div>
-                <label for="contactPerDay">Nombre de contacts quotidiens</label>
-                <input type="range" id="contactPerDay" min="0" value="50">
+            <div class="box box--flex">
+                <div>
+                    <label for="contactPerDay">Nombre de contacts quotidiens</label>
+                    <input type="range" id="contactPerDay" min="0" max="200" value="50">
+                </div>
+                <span class="tag tag--yellow">
+                    <span data-js-contactPerDayLabel></span>
+                    <span class="tag__unit">/ jour</span>
+                </span>
+            </div>
+            <div class="box box--flex">
+                <div>
+                    <label for="probability">Probabilité de transmission</label>
+                    <input type="range" min="0" max="3" id="probability" step="0.1" value="0.5">
+                </div>
+                <div>
+                    <span class="tag tag--blue">
+                        <span data-js-probabilityLabel></span>
+                        <span class="tag__unit">%</span>
+                    </span>
+                </div>
             </div>
             <div>
-                <label for="probability">Probabilité de transmission</label>
-                <input type="range" min="0" max="5" id="probability" step="0.5" value="0.5">
-            </div>
-            <div>
-                <div>Nombre total de morts à 6 mois</div>
-                <div id="totalDeaths">[nb]</div>
+                <div class="boxTitle">Nombre total de morts à 6 mois</div>
+                <div class="boxDeaths">
+                    <span id="totalDeaths"></span>
+                    <spa class="boxDeaths__unit">morts</span>
+                </div>
             </div>
         </div>
         <div class="graph">
-            <canvas id="chart"></canvas>
+            <div class="box">
+                <canvas id="chart"></canvas>
+            </div>
+            <div class="box">
+                <ul class="mb3">
+                    <li>Population totale : <span data-label-population></span></li>
+                    <li>Nombre de contacts quotidiens : <span data-label-dailyContactsRate></span></li>
+                    <li>Probabilité de transmission : <span data-label-transmissionRisk></span>%</li>
+                    <li>Durée de la maladie : <span data-label-duration></span> jours</li>
+                    <li>Taux mortalité : <span data-label-deathRate></span>%</li>
+                    <li>R0 (calculé) : <span data-label-r0></span></li>
+                </ul>
+            </div>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>

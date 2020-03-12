@@ -1,7 +1,7 @@
 const DURATION = 10
 const DEATH_RATE = 0.03
 const POPULATION = 66524000
-const DAYS = 200
+const DAYS = 180
 
 class SIRModel {
   runSimulation () {

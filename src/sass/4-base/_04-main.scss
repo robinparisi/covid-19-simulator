@@ -3,7 +3,7 @@
 /* ----------------------------------------------------------- */
 
 body {
-  background-color: #fff;
+  background-color: #f6f7fb;
   color: $color-dark-text;
   font-family: $fontstack1;
 }
@@ -20,7 +20,9 @@ body {
 -------------------------------------------------------------- */
 
 h1 {
-  @include flow(50);
+  margin-bottom: 2rem;
+  font-size: 3rem;
+  line-height: 1;
 }
 
 h2 {

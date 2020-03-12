@@ -9,6 +9,88 @@
 }
 
 .wrapper > div {
-  width: 50%;
   padding: 0 4rem;
+  width: 50%;
+}
+
+/* title
+-------------------------------------------------------------- */
+
+.boxTitle {
+  margin-bottom: 1rem;
+  font-size: 1.7rem;
+}
+
+/* box
+-------------------------------------------------------------- */
+
+.box {
+  margin-bottom: 3rem;
+  padding: 2rem 4rem;
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.02);
+}
+
+.box--flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.box > div:last-of-type {
+  margin-left: 2rem;
+}
+
+.box:last-child {
+  margin-bottom: 0;
+}
+
+.box ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* tag
+-------------------------------------------------------------- */
+
+.tag {
+  display: inline-block;
+  padding: 2rem;
+  min-width: 20rem;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 3rem;;
+}
+
+.tag__unit {
+  font-size: 1.5rem;
+}
+
+.tag--yellow {
+  background-color: #fefbeb;
+  color: #fdcc0c;
+}
+
+.tag--blue {
+  background-color: #f0f5ff;
+  color: #0054fe;
+}
+
+/* death
+-------------------------------------------------------------- */
+
+.boxDeaths {
+  padding: 2rem;
+  border-radius: 5px;
+  background-color: #fe5a8c;
+  text-align: center;
+  font-weight: bold;
+  font-size: 3rem;
+}
+
+.boxDeaths__unit {
+  font-size: 1.5rem;
 }
