@@ -99,7 +99,7 @@ class UI {
 
     values.forEach((item, index) => {
       if (index % 7 === 0) {
-        dataset.labels.push(index)
+        dataset.labels.push(`week ${index / 7}`)
         dataset.healthy.push(Math.round(item.healthy))
         dataset.cases.push(Math.round(item.cases))
         dataset.recoveries.push(Math.round(item.recoveries))
