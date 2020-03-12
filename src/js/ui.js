@@ -60,6 +60,7 @@ class UI {
     this.model.runSimulation()
     const values = this.model.getValues()
     this.refreshDeaths(values[values.length - 1].deaths)
+    this.refreshLabels()
     this.refreshGraph(values)
   }
 
