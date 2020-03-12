@@ -11,6 +11,10 @@
     <div class="wrapper">
         <div class="configurator">
             <h1>Simulateur COVID-19</h1>
+            <p>
+                <strong>Important</strong> : cet outil se base sur le modèle <a href="https://en.wikipedia.org/wiki/Compartmental_models_in_epidemiology#The_SIR_model">SIR</a> et a pour unique vocation de montrer l'importance des mesures de distanciation sociale (télétravail, fermeture des écoles, annulation évènement...) sur l'évolution de l'épidémie. 
+                Ce modèle n'est <strong>absolument pas prédictif</strong>. Pour plus d'informations, n'hésitez pas à lire l'article explicatif sur le blog de <a href="https://sciencetonnante.wordpress.com/2020/03/12/epidemie-nuage-radioactif-et-distanciation-sociale/">David Louapre</a>.
+            </p>
             <div class="box box--flex">
                 <div>
                     <label for="contactPerDay">Nombre de contacts quotidiens</label>
@@ -34,10 +38,9 @@
                 </div>
             </div>
             <div>
-                <div class="boxTitle">Nombre total de morts à 6 mois</div>
                 <div class="boxDeaths">
                     <span id="totalDeaths"></span>
-                    <spa class="boxDeaths__unit">morts</span>
+                    <div class="boxDeaths__unit">morts après 6 mois</div>
                 </div>
             </div>
         </div>

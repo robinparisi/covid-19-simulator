@@ -46,8 +46,8 @@ h1:first-child {
 
 a,
 a:visited {
-  color: $color-link;
-  text-decoration: none;
+  color: $color-dark-text;
+  text-decoration: underline;
 }
 
 a:hover {
