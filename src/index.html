@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <title>COVID-19 simulator</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="configurator">
+            <h1>Simulateur COVID-19</h1>
+            <div>
+                <label for="contactPerDay">Nombre de contacts quotidiens</label>
+                <input type="range" id="contactPerDay" min="0" value="50">
+            </div>
+            <div>
+                <label for="probability">Probabilité de transmission</label>
+                <input type="range" min="0" max="5" id="probability" step="0.5" value="0.5">
+            </div>
+            <div>
+                <div>Nombre total de morts à 6 mois</div>
+                <div id="totalDeaths">[nb]</div>
+            </div>
+        </div>
+        <div class="graph">
+            <canvas id="chart"></canvas>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="js/model.js"></script>
+    <script src="js/ui.js"></script>
+    <script>
+        var ui = new UI(new window.SIRModel).init()
+        ui.runSimulation()
+    </script>
+</body>
+
+</html>
