@@ -15,7 +15,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "now-build": "./node_modules/gulp/bin/gulp.js"
+    "now-build": "./node_modules/gulp/bin/gulp.js --production"
   },
   "repository": {
     "type": "git",

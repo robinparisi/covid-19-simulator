@@ -115,6 +115,7 @@ class UI {
           label: 'Sains',
           data: dataset.healthy,
           borderColor: '#1a535c',
+          backgroundColor: '#257784',
           fill: false,
           hidden: true
         },
@@ -122,12 +123,14 @@ class UI {
           label: 'Malades',
           data: dataset.cases,
           borderColor: '#ffe66d',
+          backgroundColor: '#ffefa0',
           fill: false
         },
         {
           label: 'Remis',
           data: dataset.recoveries,
           borderColor: '#4ecdc4',
+          backgroundColor: '#76d8d1',
           fill: false,
           hidden: true
         },
@@ -135,6 +138,7 @@ class UI {
           label: 'Morts',
           data: dataset.deaths,
           borderColor: '#ff6b6b',
+          backgroundColor: '#ff9e9e',
           fill: false
         }]
       }
